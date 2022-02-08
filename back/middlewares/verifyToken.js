@@ -7,7 +7,7 @@ module.exports = (req, res, next) => {
     return res.status(401).send("Unauthorized");
   }
   try {
-    const decodedToken = jwt.verify(token, "secretkey");
+    const decodedToken = jwt.verify(token, process.env.PRIVATE_KEY);
 
     req.user = decodedToken;
 

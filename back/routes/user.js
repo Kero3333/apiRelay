@@ -37,9 +37,13 @@ router.post("/register", async (req, res) => {
   try {
     await newUser.save();
 
-    const token = jwt.sign({ id: _.pick(newUser, "_id") }, "secretkey", {
-      algorithm: "HS256",
-    });
+    const token = jwt.sign(
+      { id: _.pick(newUser, "_id") },
+      process.env.PRIVATE_KEY,
+      {
+        algorithm: "HS256",
+      }
+    );
 
     return res
       .header("x-auth-token", token)

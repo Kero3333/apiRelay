@@ -1,5 +1,4 @@
 const mangoose = require("mongoose");
-require("dotenv").config();
 
 module.exports = async () => {
   const dbUrl = process.env.dbUrl;

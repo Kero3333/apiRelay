@@ -80,11 +80,11 @@ form.addEventListener("submit", async (e) => {
       etiquette,
     });
     document.querySelector("span").innerHTML = `
-        The etiquette was created.
-        click
-        <a href="${etiquette.url}">here</a>
-        to download it
-        `;
+          The etiquette was created.
+          click
+          <a href="${etiquette.url}">here</a>
+          to download it
+          `;
   } catch (err) {
     document.querySelector("span").textContent = err.message;
   }

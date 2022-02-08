@@ -9,6 +9,7 @@ const verifyToken = require("../middlewares/verifyToken");
 const validateLogin = require("../utilities/schemaValidateLogin");
 
 // connexion à un compte
+
 router.post("", async (req, res) => {
   const { email, password } = req.body;
   const { error } = validateLogin(req.body);
@@ -28,7 +29,7 @@ router.post("", async (req, res) => {
     return res.status(400).send({ error: "invalid email or invalid password" });
   }
 
-  const token = jwt.sign({ id: _.pick(rep, "_id") }, "secretkey", {
+  const token = jwt.sign({ id: _.pick(rep, "_id") }, process.env.PRIVATE_KEY, {
     algorithm: "HS256",
   });
   res.send({ emailUser: rep.email, token });
