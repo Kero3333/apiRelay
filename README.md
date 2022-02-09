@@ -36,7 +36,7 @@ Pour la recherche de points relais :
 }  
 
 2. GET http://127.0.0.1:3000/api/search/fr/cp/35000?result=10  
-3. GET http://127.0.0.1:3000/api/search/fr/ville/Rennes?rayon=100  
+3. GET http://127.0.0.1:3000/api/search/fr/ville/Rennes?cp=35000&rayon=100  
 
 Pour la création d'étiquette :   
 
