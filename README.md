@@ -12,11 +12,15 @@ vers un format JSON afin de rechercher des points relais ou de créer des étiqu
 3. Lancer la commande npm start
 4. Allez sur le lien http://localhost:1234
 
+### Lien du site web héberger sur heroku : https://apirelay-mr-website.herokuapp.com/
+
 ## Prérequis pour lancer uniquement l'api en local
 
 1. Installer nodeJs
 2. Lancer la commmande npm i
 3. Lancer la commande npm run back
+
+### Lien de l'api héberger sur heroku : https://apirelay-mr.herokuapp.com/
 
 ## Fonctionnement de l'api
 
@@ -32,7 +36,7 @@ Pour la recherche de points relais :
 }  
 
 2. GET http://127.0.0.1:3000/api/search/fr/cp/35000?result=10  
-3. GET http://127.0.0.1:3000/api/search/fr/ville/Rennes?rayon=100  
+3. GET http://127.0.0.1:3000/api/search/fr/ville/Rennes?cp=35000&rayon=100  
 
 Pour la création d'étiquette :   
 
