@@ -12,11 +12,15 @@ vers un format JSON afin de rechercher des points relais ou de créer des étiqu
 3. Lancer la commande npm start
 4. Allez sur le lien http://localhost:1234
 
+### Lien du site web héberger sur heroku : https://apirelay-mr-website.herokuapp.com/
+
 ## Prérequis pour lancer uniquement l'api en local
 
 1. Installer nodeJs
 2. Lancer la commmande npm i
 3. Lancer la commande npm run back
+
+### Lien de l'api héberger sur heroku : https://apirelay-mr.herokuapp.com/
 
 ## Fonctionnement de l'api
 
