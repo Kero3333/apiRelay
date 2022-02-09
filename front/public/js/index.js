@@ -22,34 +22,34 @@ form.addEventListener("submit", async (e) => {
 
   // si le code postale est renseigner mais pas la ville
   if (params.Ville === "" && params.CP !== "") {
-    rep = await axios
-      .get(
+    try {
+      rep = await axios.get(
         `http://localhost:3000/api/search/${params.Pays}/cp/${params.CP}?rayon=${params.RayonRecherche}&results=${params.NombreResultats}`
-      )
-      .catch((error) => {
-        document.querySelector("#relays").innerHTML = `${error.message}`;
-        return;
-      });
+      );
+    } catch (error) {
+      document.querySelector("#relays").innerHTML = `${error.message}`;
+      return;
+    }
   }
   // sinon si la ville est renseigner mais pas le code postale
   else if (params.Ville !== "" && params.CP === "") {
-    rep = await axios
-      .get(
+    try {
+      rep = await axios.get(
         `http://localhost:3000/api/search/${params.Pays}/ville/${params.Ville}?rayon=${params.RayonRecherche}&results=${params.NombreResultats}`
-      )
-      .catch((error) => {
-        document.querySelector("#relays").innerHTML = `${error.message}`;
-        return;
-      });
+      );
+    } catch (error) {
+      document.querySelector("#relays").innerHTML = `${error.message}`;
+      return;
+    }
   } else {
-    rep = await axios
-      .get(
+    try {
+      rep = await axios.get(
         `http://localhost:3000/api/search/${params.Pays}/ville/${params.Ville}?cp=${params.CP}&rayon=${params.RayonRecherche}&results=${params.NombreResultats}`
-      )
-      .catch((error) => {
-        document.querySelector("#relays").innerHTML = `${error.message}`;
-        return;
-      });
+      );
+    } catch (error) {
+      document.querySelector("#relays").innerHTML = `${error.message}`;
+      return;
+    }
   }
 
   const { data } = rep;
