@@ -5,9 +5,7 @@ const axios = require("axios");
 module.exports = async () => {
   let token = localStorage.getItem("token");
   if (!token) {
-    return (document.querySelector("body").innerHTML = `
-  <h1>ERROR 401 UNAUTHORIZED</h1>
-  `);
+    return (document.location.href = "http://localhost:1234/login.html");
   }
   token = token.replace(/"/g, "");
   try {
